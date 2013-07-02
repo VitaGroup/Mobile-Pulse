@@ -46,6 +46,7 @@ if ($('form').hasClass('vitatube')) {
 
 }
 
+// Wrap <legend> tags in <h2> as legend tags are hard to style.
 if ($('form').hasClass('mobile-forms-view')) {
   $('legend').wrap('<h2>');
 }
