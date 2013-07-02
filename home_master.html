@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
     <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/UserUploadedImages/1193/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/UserUploadedImages/1193/apple-touch-icon-72x72.png" />
@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/UserUploadedImages/1193/apple-touch-icon-144x144.png" />
     <link media="screen" href="/UserUploadedStyles/site.mobile.min.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="/include/js/precustomjavascript.js"></script>
+    <script type="text/javascript" src="/UserUploadedJS/jquery.touchSwipe.min.js "></script>
 </head>
 <body class="cbp-spmenu-push">
   <form id="form1" runat="server"  class="mobile-home">
@@ -29,17 +30,16 @@
           </div>
 
         </div> <!-- End header -->
-        
 
-        <div class="content">
+      <div class="content">
            <div class="column">
               <tdcm:EmbedArticle id="globalNews" ArticleID="743" runat="server" renderlate="false" ViewStateMode="Inherit" />
               <!-- <asp:ContentPlaceHolder ID="ContentPlaceHolderMainNoAjax" runat="server" /> -->
             </div>
-            <tdcm:RenderTag ID="RenderTag1" runat="server" text="<~~standardormobileview~~>" RenderLate="false" ViewStateMode="Disabled" />
         </div>
-</div>    
-    </form>
+        <tdcm:RenderTag ID="RenderTag1" runat="server" text="<~~standardormobileview~~>" RenderLate="false" ViewStateMode="Disabled" />
+      </div>    
+  </form>
 <script type="text/javascript" src="/UserUploadedJS/mobilecustom.min.js"></script>
 <script type="text/javascript" src="/UserUploadedJS/classie.min.js"></script>
 

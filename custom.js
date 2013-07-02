@@ -39,7 +39,7 @@ if ($("div").is("#Widget944"))
   $(".column").removeClass('vg-article');
 }
 
-$("#WidgetPageLink944").appendTo($('.container'));
+// $("#WidgetPageLink944").appendTo($('.container'));
 
 if ($('form').hasClass('vitatube')) {
   $('.mainItem dl dt br, .subItem dl dt br').remove();
@@ -48,5 +48,42 @@ if ($('form').hasClass('vitatube')) {
 
 // Wrap <legend> tags in <h2> as legend tags are hard to style.
 if ($('form').hasClass('mobile-forms-view')) {
-  $('legend').wrap('<h2>');
+  $('legend').wrap('<h2 class="legend">');
 }
+
+// Enable swipe to open menu
+if ($('form').hasClass('mobile-home')) {
+  $(".column, nav").swipe( {
+      swipeRight: function()
+      {
+        if (!$('.cbp-spmenu-push-toright').hasClass('cbp-spmenu-push-toright'))
+        {
+          $('#showLeftPush').click();
+        }
+      },
+      swipeLeft: function()
+      {
+        if ($('.cbp-spmenu-push-toright').hasClass('cbp-spmenu-push-toright'))
+        {
+          $('#showLeftPush').click();
+        }
+      },
+      allowPageScroll:"vertical",
+      threshold: 100
+    });
+}
+
+// Enable swipe to go back on all page but home and forms.
+if ($('form').hasClass('mobile-news') || $('form').hasClass('vitatube') || $('form').hasClass('vitatube-video') || $('form').hasClass('mobile-forms'))
+{
+   $(".column").swipe( {
+      swipeRight: function()
+      {
+          window.history.back()
+      },
+      allowPageScroll:"vertical",
+      threshold: 150,
+    });
+
+}
+

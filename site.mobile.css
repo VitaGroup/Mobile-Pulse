@@ -18,6 +18,7 @@
 |----------------------------------------------------------
 */
 
+
 * {font-family: HelveticaNeue-Light, Arial, Verdana !important}
 html, body {margin: 0; width: 100%; height: 100%}
 
@@ -35,6 +36,11 @@ html, body {margin: 0; width: 100%; height: 100%}
 .topBar {z-index: 1000; width: 100%; background: #7855A3; height: 50px; position: fixed; top: 0px; left: 0px}
 .topBar h2 {margin: 0 auto; text-align: center; line-height: 50px; width: 60%; color: #FFF;}
 .topBar h2 img {position: relative; top: 7px;}
+
+.widgetPageLinks {width: 100%; margin: 20px auto; text-align: center;}
+.widgetPageLinks #NextLink,
+.widgetPageLinks #PreviousLink {display: inline-block; background: #7855A3; height: 30px; line-height: 30px; width: 30%; color: white; text-decoration: none;}
+.widgetPageLinks #NextLink {margin-left: -35px;}
 
 /*
 |----------------------------------------------------------
@@ -59,12 +65,16 @@ form.vitatube .widget h2,
 .serviceLinks,
 .utilities ul, 
 form.vitatube-video .comments-container .post-item > h3,
-form.vitatube-video .comments-container .row > h3 {display: none !important;}
+form.vitatube-video .comments-container .row > h3,
+.resultPageNumber,
+.resultPageNumberSelected,
+.widgetPageLinks h3 {display: none !important;}
 
 form.mobile-news .column,
 form.vitatube-video .column,
 form.vitatube .column,
 form.mobile-forms .column {padding: 10px; width: 94%; font-size: 16px !important}
+
       
 .search {display: none; clear: both; background: #ddd; padding: 10px 0 !important; overflow: hidden;}  
 .search input {width: 150px !important;}
@@ -74,6 +84,8 @@ form.mobile-forms .column {padding: 10px; width: 94%; font-size: 16px !important
 .search ul {border-top: 1px solid #FFFFFF; margin: 10px 0; padding: 5px 10px;}
 .search li {list-style: none; float: left; float: left; list-style: none outside none; margin: 0; padding: 0 5px 0 0;}
 .search li a {text-transform: none; font-weight: normal;}
+
+form.mobile-home .container > a {display: block; width: 50%; height: 30px; line-height: 30px; background: #FF7878; color: #FFF; text-align: center; margin: 0 auto; text-decoration: none;}
 
 /*
 |----------------------------------------------------------
@@ -193,19 +205,43 @@ form.mobile-forms .widget .subItem {border-bottom: dotted 1px #ccc;}
 
 form.mobile-forms-view .column {width: 94%; padding: 10px;}
 
-form.mobile-forms-view label {width: 100% !important; display: block;}
+form.mobile-forms-view .clsFormCreator label {width: 100%; display: block;}
 
 form.mobile-forms-view textarea,
-form.mobile-forms-view input {width: 92% !important; font-size: 16px; padding: 11px;}
+form.mobile-forms-view input[type="text"] {width: 92% !important; font-size: 16px; padding: 11px; -webkit-appearance: none; border-radius: 0; border: solid 1px #999;}
+form.mobile-forms-view select {width: 100% !important; height: 42px !important; border-radius: 0; background-color: #FFF !important; border: solid 1px #999;}
+
+form.mobile-forms-view textarea {max-height: 200px;}
+
+form.mobile-forms-view .clsFormCreator_checkboxlist input[type="checkbox"] {float: left; margin-right: 10px;}
+form.mobile-forms-view .clsFormCreator_checkboxlist label {display: block; float: left; width: 90%;}
+form.mobile-forms-view .clsFormCreator_checkboxlist span {display: inline-block; width: 100%;}
+form.mobile-forms-view .clsFormCreator legend span {width: auto !important}
+
+form.mobile-forms-view .clsFormCreator_radiobuttonlist input[type="radio"] {float: left; margin-right: 10px;}
+form.mobile-forms-view .clsFormCreator_radiobuttonlist label {display: block; float: left; width: 90%;}
+form.mobile-forms-view .clsFormCreator_radiobuttonlist span {display: inline-block; width: 100%;}
+form.mobile-forms-view .clsFormCreator legend span {width: auto !important}
 
 form.mobile-forms-view .clsFormCreator_textbox,
 form.mobile-forms-view .clsFormCreator_datebox,
 form.mobile-forms-view .clsFormCreator_textarea,
-form.mobile-forms-view .clsFormCreator_droplist {margin-bottom: 20px;}
+form.mobile-forms-view .clsFormCreator_droplist,
+form.mobile-forms-view .clsFormCreator_emailbox,
+form.mobile-forms-view .clsFormCreator_radiobuttonlist,
+form.mobile-forms-view .clsFormCreator_checkboxlist,
+form.mobile-forms-view .clsFormCreator_uploadfilebox {margin-bottom: 20px;}
 
+form.mobile-forms-view .clsBtnSubmit input {width: 100%; height: 50px; background: #7855A3; display: block; margin-top: 20px; line-height: 50px; text-align: center; color: #FFF; -webkit-appearance: none; font-size: 16px; border-radius: 0}
 
-form.mobile-forms .widget h2 {margin-bottom: 0; text-align: center; font-weight: normal !important; height: 36px; line-height: 36px;; color: #333;}
+form.mobile-forms-view .clsFormCreator h2 {font-weight: normal; margin-top: 0;}
+
+form.mobile-forms-view .clsFormCreator fieldset {padding: 0; border: none; margin: 0;}
+form.mobile-forms-view .clsFormCreator fieldset h2.legend {-webkit-margin-bottom-collapse: separate; margin: 20px 0; border-bottom: dotted 1px #ccc; display: block; width: 98%; padding: 0 0 5px 0; font-size: 21px; color: #7855A3}
+
+form.mobile-forms .widget h2 {margin-bottom: 0; text-align: center; font-weight: normal !important; height: 36px; line-height: 36px;}
 form.mobile-forms .widget a {text-decoration: none; color: #333;}
+
 /* Vita Forms */
 form.mobile-forms #Widget1899 h2 {border-bottom: solid 2px #7855A3;}
 
@@ -217,6 +253,3 @@ form.mobile-forms #Widget1900 h2 {border-bottom: solid 2px #333333;}
 
 /* iConcierge Forms */
 form.mobile-forms #Widget1905 h2 {border-bottom: solid 2px #ED2918;}
-
-
-
